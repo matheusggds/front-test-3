@@ -16,4 +16,4 @@ gulp
 ```
 Se você não tiver editado o `gulpfile.js` é só acessar http://localhost:3000/ que poderá visualizar o projeto.
 
-<a href="mailto:matheusggds@hotmail.com">matheusggds@hotmail.com</a>
+Qualquer dúvida, entre em contato: <a href="mailto:matheusggds@hotmail.com">matheusggds@hotmail.com</a>
