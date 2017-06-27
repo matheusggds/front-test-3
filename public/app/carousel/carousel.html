@@ -1,0 +1,10 @@
+<div id="carouselDefault" class="text-center">
+	<ul id="slides">
+		<li ng-repeat="item in $ctrl.items" class="slide" ng-class="{'showing' : item.active}">
+			<img class="img-fluid" src="{{item.image}}" alt="">
+		</li>
+	</ul>
+	<ul id="indicators" class="list-inline mt-3">
+		<li ng-repeat="item in $ctrl.items" class="indicator list-inline-item" ng-class="{'active' : item.active}" ng-click="$ctrl.gotoSlide(item.id)"><span></span></li>
+	</ul>
+</div>

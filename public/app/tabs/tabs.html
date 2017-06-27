@@ -1,0 +1,64 @@
+<ul class="nav nav-tabs custom-tabs justify-content-center">
+	<li class="nav-item mr-3">
+		<a class="nav-link" ng-click="$ctrl.tab=1" ng-class="{'active' : $ctrl.tab==1}">
+			News
+		</a>
+	</li>
+	<li class="nav-item mr-3">
+		<a class="nav-link" ng-click="$ctrl.tab=2" ng-class="{'active' : $ctrl.tab==2}">
+			Tabela
+		</a>
+	</li>
+	<li class="nav-item">
+		<a class="nav-link" ng-click="$ctrl.tab=3" ng-class="{'active' : $ctrl.tab==3}">
+			Texto
+		</a>
+	</li>
+</ul>
+
+<div class="tabs-container pt-3">
+	<div class="tab-content" ng-show="$ctrl.tab == 1">
+		<ui-view></ui-view>
+	</div>
+
+	<div class="tab-content" ng-show="$ctrl.tab == 2">
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>STRING</th>
+				<th>INTEGER</th>
+				<th>BOOLEAN</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Text 1</td>
+				<td>1</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>Text 2</td>
+				<td>2</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>Text 3</td>
+				<td>3</td>
+				<td>false</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+
+	<div class="tab-content" ng-show="$ctrl.tab == 3">
+		<div class="row">
+			<div class="col-sm-6">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod posuere neque ac auctor. Phasellus luctus maximus ante, quis rhoncus enim sollicitudin sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris semper consectetur libero et bibendum. Donec aliquam laoreet quam at dictum. Praesent vitae arcu metus. Integer non commodo purus.</p>
+			</div>
+			<div class="col-sm-6">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod posuere neque ac auctor. Phasellus luctus maximus ante, quis rhoncus enim sollicitudin sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris semper consectetur libero et bibendum. Donec aliquam laoreet quam at dictum. Praesent vitae arcu metus. Integer non commodo purus.</p>
+			</div>
+		</div>
+	</div>
+</div>

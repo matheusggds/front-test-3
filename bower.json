@@ -1,0 +1,22 @@
+{
+  "name": "test-front-foster",
+  "description": "FRONT END PL TEST",
+  "main": "index.html",
+  "authors": [
+    "Matheus Gomide"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.4",
+    "angular-ui-router": "^1.0.4",
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}
