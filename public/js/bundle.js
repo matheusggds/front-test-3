@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /**
@@ -645,7 +645,7 @@ exports.silenceUncaughtInPromise = function (promise) {
 exports.silentRejection = function (error) {
     return exports.silenceUncaughtInPromise(coreservices_1.services.$q.reject(error));
 };
-//# sourceMappingURL=common.js.map
+
 },{"./coreservices":2,"./hof":4,"./predicates":6}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -657,7 +657,7 @@ var services = {
     $injector: undefined,
 };
 exports.services = services;
-//# sourceMappingURL=coreservices.js.map
+
 },{}],3:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -741,7 +741,7 @@ var Glob = (function () {
     return Glob;
 }());
 exports.Glob = Glob;
-//# sourceMappingURL=glob.js.map
+
 },{}],4:[function(require,module,exports){
 "use strict";
 /**
@@ -987,7 +987,7 @@ function pattern(struct) {
     };
 }
 exports.pattern = pattern;
-//# sourceMappingURL=hof.js.map
+
 },{}],5:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -1003,7 +1003,7 @@ __export(require("./predicates"));
 __export(require("./queue"));
 __export(require("./strings"));
 __export(require("./trace"));
-//# sourceMappingURL=index.js.map
+
 },{"./common":1,"./coreservices":2,"./glob":3,"./hof":4,"./predicates":6,"./queue":7,"./strings":8,"./trace":9}],6:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1051,7 +1051,7 @@ exports.isInjectable = isInjectable;
  * It is probably a Promise if it's an object, and it has a `then` property which is a Function
  */
 exports.isPromise = hof_1.and(exports.isObject, hof_1.pipe(hof_1.prop('then'), exports.isFunction));
-//# sourceMappingURL=predicates.js.map
+
 },{"../state/stateObject":39,"./hof":4}],7:[function(require,module,exports){
 "use strict";
 /**
@@ -1098,7 +1098,7 @@ var Queue = (function () {
     return Queue;
 }());
 exports.Queue = Queue;
-//# sourceMappingURL=queue.js.map
+
 },{}],8:[function(require,module,exports){
 "use strict";
 /**
@@ -1251,7 +1251,7 @@ function joinNeighborsR(acc, x) {
 }
 exports.joinNeighborsR = joinNeighborsR;
 ;
-//# sourceMappingURL=strings.js.map
+
 },{"../resolve/resolvable":33,"../transition/rejectFactory":48,"../transition/transition":49,"./common":1,"./hof":4,"./predicates":6}],9:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1495,7 +1495,7 @@ exports.Trace = Trace;
  */
 var trace = new Trace();
 exports.trace = trace;
-//# sourceMappingURL=trace.js.map
+
 },{"../common/hof":4,"../common/predicates":6,"./strings":8}],10:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1534,7 +1534,7 @@ var UIRouterGlobals = (function () {
     return UIRouterGlobals;
 }());
 exports.UIRouterGlobals = UIRouterGlobals;
-//# sourceMappingURL=globals.js.map
+
 },{"./common/queue":7,"./params/stateParams":27}],11:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1553,7 +1553,7 @@ function addCoreResolvables(trans) {
 exports.registerAddCoreResolvables = function (transitionService) {
     return transitionService.onCreate({}, addCoreResolvables);
 };
-//# sourceMappingURL=coreResolvables.js.map
+
 },{"../router":35,"../transition/transition":49}],12:[function(require,module,exports){
 "use strict";
 /** @module hooks */ /** */
@@ -1585,7 +1585,7 @@ function ignoredHook(trans) {
 exports.registerIgnoredTransitionHook = function (transitionService) {
     return transitionService.onBefore({}, ignoredHook, { priority: -9999 });
 };
-//# sourceMappingURL=ignoredTransition.js.map
+
 },{"../common/trace":9,"../transition/rejectFactory":48}],13:[function(require,module,exports){
 "use strict";
 /** @module hooks */ /** */
@@ -1605,7 +1605,7 @@ function invalidTransitionHook(trans) {
 exports.registerInvalidTransitionHook = function (transitionService) {
     return transitionService.onBefore({}, invalidTransitionHook, { priority: -10000 });
 };
-//# sourceMappingURL=invalidTransition.js.map
+
 },{}],14:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1703,7 +1703,7 @@ function lazyLoadState(transition, state) {
     return promise;
 }
 exports.lazyLoadState = lazyLoadState;
-//# sourceMappingURL=lazyLoad.js.map
+
 },{"../common/coreservices":2}],15:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1761,7 +1761,7 @@ var onEnterHook = makeEnterExitRetainHook('onEnter');
 exports.registerOnEnterHook = function (transitionService) {
     return transitionService.onEnter({ entering: function (state) { return !!state.onEnter; } }, onEnterHook);
 };
-//# sourceMappingURL=onEnterExitRetain.js.map
+
 },{}],16:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1799,7 +1799,7 @@ var redirectToHook = function (trans) {
 exports.registerRedirectToHook = function (transitionService) {
     return transitionService.onStart({ to: function (state) { return !!state.redirectTo; } }, redirectToHook);
 };
-//# sourceMappingURL=redirectTo.js.map
+
 },{"../common/coreservices":2,"../common/predicates":6,"../state/targetState":43}],17:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1843,7 +1843,7 @@ var lazyResolveState = function (trans, state) {
 exports.registerLazyResolveState = function (transitionService) {
     return transitionService.onEnter({ entering: hof_1.val(true) }, lazyResolveState, { priority: 1000 });
 };
-//# sourceMappingURL=resolve.js.map
+
 },{"../common/common":1,"../common/hof":4,"../resolve/resolveContext":34}],18:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1879,7 +1879,7 @@ var updateGlobalState = function (trans) {
 exports.registerUpdateGlobalState = function (transitionService) {
     return transitionService.onCreate({}, updateGlobalState);
 };
-//# sourceMappingURL=updateGlobals.js.map
+
 },{"../common/common":1}],19:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1905,7 +1905,7 @@ var updateUrl = function (transition) {
 exports.registerUpdateUrl = function (transitionService) {
     return transitionService.onSuccess({}, updateUrl, { priority: 9999 });
 };
-//# sourceMappingURL=url.js.map
+
 },{}],20:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -1953,7 +1953,7 @@ var activateViews = function (transition) {
 exports.registerActivateViews = function (transitionService) {
     return transitionService.onSuccess({}, activateViews);
 };
-//# sourceMappingURL=views.js.map
+
 },{"../common/common":1,"../common/coreservices":2}],21:[function(require,module,exports){
 "use strict";
 /**
@@ -1976,7 +1976,7 @@ __export(require("./globals"));
 __export(require("./router"));
 __export(require("./vanilla"));
 __export(require("./interface"));
-//# sourceMappingURL=index.js.map
+
 },{"./common/index":5,"./globals":10,"./interface":22,"./params/index":23,"./path/index":28,"./resolve/index":31,"./router":35,"./state/index":36,"./transition/index":46,"./url/index":53,"./vanilla":59,"./view/index":71}],22:[function(require,module,exports){
 "use strict";
 /**
@@ -1998,7 +1998,7 @@ var UIRouterPluginBase = (function () {
     return UIRouterPluginBase;
 }());
 exports.UIRouterPluginBase = UIRouterPluginBase;
-//# sourceMappingURL=interface.js.map
+
 },{}],23:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -2009,7 +2009,7 @@ __export(require("./param"));
 __export(require("./paramTypes"));
 __export(require("./stateParams"));
 __export(require("./paramType"));
-//# sourceMappingURL=index.js.map
+
 },{"./param":24,"./paramType":25,"./paramTypes":26,"./stateParams":27}],24:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2208,7 +2208,7 @@ var Param = (function () {
     return Param;
 }());
 exports.Param = Param;
-//# sourceMappingURL=param.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/hof":4,"../common/predicates":6,"./paramType":25}],25:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2351,7 +2351,7 @@ function ArrayType(type, mode) {
         $arrayMode: mode
     });
 }
-//# sourceMappingURL=paramType.js.map
+
 },{"../common/common":1,"../common/predicates":6}],26:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2508,7 +2508,7 @@ function initDefaultTypes() {
     });
 }
 initDefaultTypes();
-//# sourceMappingURL=paramTypes.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/hof":4,"../common/predicates":6,"./paramType":25}],27:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2553,7 +2553,7 @@ var StateParams = (function () {
     return StateParams;
 }());
 exports.StateParams = StateParams;
-//# sourceMappingURL=stateParams.js.map
+
 },{"../common/common":1}],28:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -2563,7 +2563,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /** @module path */ /** for typedoc */
 __export(require("./pathNode"));
 __export(require("./pathFactory"));
-//# sourceMappingURL=index.js.map
+
 },{"./pathFactory":29,"./pathNode":30}],29:[function(require,module,exports){
 "use strict";
 /** @module path */ /** for typedoc */
@@ -2737,7 +2737,7 @@ PathUtils.paramValues = function (path) {
     return path.reduce(function (acc, node) { return common_1.extend(acc, node.paramValues); }, {});
 };
 exports.PathUtils = PathUtils;
-//# sourceMappingURL=pathFactory.js.map
+
 },{"../common/common":1,"../common/hof":4,"../state/targetState":43,"./pathNode":30}],30:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2815,7 +2815,7 @@ var PathNode = (function () {
     return PathNode;
 }());
 exports.PathNode = PathNode;
-//# sourceMappingURL=pathNode.js.map
+
 },{"../common/common":1,"../common/hof":4,"../params/param":24}],31:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -2826,7 +2826,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./interface"));
 __export(require("./resolvable"));
 __export(require("./resolveContext"));
-//# sourceMappingURL=index.js.map
+
 },{"./interface":32,"./resolvable":33,"./resolveContext":34}],32:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2842,7 +2842,7 @@ exports.resolvePolicies = {
         RXWAIT: "RXWAIT"
     }
 };
-//# sourceMappingURL=interface.js.map
+
 },{}],33:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -2976,7 +2976,7 @@ Resolvable.fromData = function (token, data) {
     return new Resolvable(token, function () { return data; }, null, null, data);
 };
 exports.Resolvable = Resolvable;
-//# sourceMappingURL=resolvable.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/predicates":6,"../common/strings":8,"../common/trace":9}],34:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3177,7 +3177,7 @@ var UIInjectorImpl = (function () {
     };
     return UIInjectorImpl;
 }());
-//# sourceMappingURL=resolveContext.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/hof":4,"../common/strings":8,"../common/trace":9,"../path/pathFactory":29,"./interface":32,"./resolvable":33}],35:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3362,7 +3362,7 @@ var UIRouter = (function () {
     return UIRouter;
 }());
 exports.UIRouter = UIRouter;
-//# sourceMappingURL=router.js.map
+
 },{"./common/common":1,"./common/predicates":6,"./common/trace":9,"./globals":10,"./state/stateRegistry":41,"./state/stateService":42,"./transition/transitionService":52,"./url/urlMatcherFactory":55,"./url/urlRouter":56,"./url/urlService":58,"./view/view":72}],36:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -3376,7 +3376,7 @@ __export(require("./stateQueueManager"));
 __export(require("./stateRegistry"));
 __export(require("./stateService"));
 __export(require("./targetState"));
-//# sourceMappingURL=index.js.map
+
 },{"./stateBuilder":37,"./stateMatcher":38,"./stateObject":39,"./stateQueueManager":40,"./stateRegistry":41,"./stateService":42,"./targetState":43}],37:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3652,7 +3652,7 @@ var StateBuilder = (function () {
     return StateBuilder;
 }());
 exports.StateBuilder = StateBuilder;
-//# sourceMappingURL=stateBuilder.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/hof":4,"../common/predicates":6,"../common/strings":8,"../resolve/resolvable":33}],38:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3716,7 +3716,7 @@ var StateMatcher = (function () {
     return StateMatcher;
 }());
 exports.StateMatcher = StateMatcher;
-//# sourceMappingURL=stateMatcher.js.map
+
 },{"../common/common":1,"../common/predicates":6}],39:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3831,7 +3831,7 @@ StateObject.isState = function (obj) {
     return predicates_1.isObject(obj['__stateObjectCache']);
 };
 exports.StateObject = StateObject;
-//# sourceMappingURL=stateObject.js.map
+
 },{"../common/common":1,"../common/glob":3,"../common/hof":4,"../common/predicates":6}],40:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -3924,7 +3924,7 @@ var StateQueueManager = (function () {
     return StateQueueManager;
 }());
 exports.StateQueueManager = StateQueueManager;
-//# sourceMappingURL=stateQueueManager.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/predicates":6,"./stateObject":39}],41:[function(require,module,exports){
 "use strict";
 /**
@@ -4081,7 +4081,7 @@ var StateRegistry = (function () {
     return StateRegistry;
 }());
 exports.StateRegistry = StateRegistry;
-//# sourceMappingURL=stateRegistry.js.map
+
 },{"../common/common":1,"../common/hof":4,"./stateBuilder":37,"./stateMatcher":38,"./stateQueueManager":40}],42:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -4655,7 +4655,7 @@ var StateService = (function () {
     return StateService;
 }());
 exports.StateService = StateService;
-//# sourceMappingURL=stateService.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/glob":3,"../common/hof":4,"../common/predicates":6,"../common/queue":7,"../hooks/lazyLoad":14,"../params/param":24,"../path/pathFactory":29,"../path/pathNode":30,"../resolve/resolveContext":34,"../transition/rejectFactory":48,"../transition/transitionService":52,"./targetState":43}],43:[function(require,module,exports){
 "use strict";
 /**
@@ -4770,7 +4770,7 @@ TargetState.isDef = function (obj) {
     return obj && obj.state && (predicates_1.isString(obj.state) || predicates_1.isString(obj.state.name));
 };
 exports.TargetState = TargetState;
-//# sourceMappingURL=targetState.js.map
+
 },{"../common/common":1,"../common/predicates":6}],44:[function(require,module,exports){
 "use strict";
 /**
@@ -4890,7 +4890,7 @@ function tupleSort(reverseDepthSort) {
         return depthDelta !== 0 ? depthDelta : r.hook.priority - l.hook.priority;
     };
 }
-//# sourceMappingURL=hookBuilder.js.map
+
 },{"../common/common":1,"../common/predicates":6,"./interface":47,"./transitionHook":51}],45:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5047,7 +5047,7 @@ function makeEvent(registry, transitionService, eventType) {
     return hookRegistrationFn;
 }
 exports.makeEvent = makeEvent;
-//# sourceMappingURL=hookRegistry.js.map
+
 },{"../common/common":1,"../common/glob":3,"../common/predicates":6,"./interface":47}],46:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -5076,7 +5076,7 @@ __export(require("./transition"));
 __export(require("./transitionHook"));
 __export(require("./transitionEventType"));
 __export(require("./transitionService"));
-//# sourceMappingURL=index.js.map
+
 },{"./hookBuilder":44,"./hookRegistry":45,"./interface":47,"./rejectFactory":48,"./transition":49,"./transitionEventType":50,"./transitionHook":51,"./transitionService":52}],47:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5093,7 +5093,7 @@ var TransitionHookScope;
     TransitionHookScope[TransitionHookScope["TRANSITION"] = 0] = "TRANSITION";
     TransitionHookScope[TransitionHookScope["STATE"] = 1] = "STATE";
 })(TransitionHookScope = exports.TransitionHookScope || (exports.TransitionHookScope = {}));
-//# sourceMappingURL=interface.js.map
+
 },{}],48:[function(require,module,exports){
 /**
  * @coreapi
@@ -5183,7 +5183,7 @@ var Rejection = (function () {
     return Rejection;
 }());
 exports.Rejection = Rejection;
-//# sourceMappingURL=rejectFactory.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/strings":8}],49:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5811,7 +5811,7 @@ var Transition = (function () {
 /** @hidden */
 Transition.diToken = Transition;
 exports.Transition = Transition;
-//# sourceMappingURL=transition.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/hof":4,"../common/predicates":6,"../common/trace":9,"../params/param":24,"../path/pathFactory":29,"../resolve/resolvable":33,"../resolve/resolveContext":34,"../state/targetState":43,"./hookBuilder":44,"./hookRegistry":45,"./interface":47,"./transitionHook":51}],50:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -5840,7 +5840,7 @@ var TransitionEventType = (function () {
     return TransitionEventType;
 }());
 exports.TransitionEventType = TransitionEventType;
-//# sourceMappingURL=transitionEventType.js.map
+
 },{"./transitionHook":51}],51:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6061,7 +6061,7 @@ TransitionHook.THROW_ERROR = function (hook) { return function (error) {
     throw error;
 }; };
 exports.TransitionHook = TransitionHook;
-//# sourceMappingURL=transitionHook.js.map
+
 },{"../common/common":1,"../common/coreservices":2,"../common/hof":4,"../common/predicates":6,"../common/strings":8,"../common/trace":9,"../state/targetState":43,"./interface":47,"./rejectFactory":48}],52:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6301,7 +6301,7 @@ var TransitionService = (function () {
     return TransitionService;
 }());
 exports.TransitionService = TransitionService;
-//# sourceMappingURL=transitionService.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/predicates":6,"../hooks/coreResolvables":11,"../hooks/ignoredTransition":12,"../hooks/invalidTransition":13,"../hooks/lazyLoad":14,"../hooks/onEnterExitRetain":15,"../hooks/redirectTo":16,"../hooks/resolve":17,"../hooks/updateGlobals":18,"../hooks/url":19,"../hooks/views":20,"./hookRegistry":45,"./interface":47,"./transition":49,"./transitionEventType":50,"./transitionHook":51}],53:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -6313,7 +6313,7 @@ __export(require("./urlMatcherFactory"));
 __export(require("./urlRouter"));
 __export(require("./urlRule"));
 __export(require("./urlService"));
-//# sourceMappingURL=index.js.map
+
 },{"./urlMatcher":54,"./urlMatcherFactory":55,"./urlRouter":56,"./urlRule":57,"./urlService":58}],54:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6817,7 +6817,7 @@ var UrlMatcher = (function () {
 /** @hidden */
 UrlMatcher.nameValidator = /^\w+([-.]+\w+)*(?:\[\])?$/;
 exports.UrlMatcher = UrlMatcher;
-//# sourceMappingURL=urlMatcher.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/predicates":6,"../common/strings":8,"../params/param":24}],55:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -6945,7 +6945,7 @@ var UrlMatcherFactory = (function () {
     return UrlMatcherFactory;
 }());
 exports.UrlMatcherFactory = UrlMatcherFactory;
-//# sourceMappingURL=urlMatcherFactory.js.map
+
 },{"../common/common":1,"../common/predicates":6,"../params/param":24,"../params/paramTypes":26,"./urlMatcher":54}],56:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7219,7 +7219,7 @@ function getHandlerFn(handler) {
     }
     return predicates_1.isFunction(handler) ? handler : hof_1.val(handler);
 }
-//# sourceMappingURL=urlRouter.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/predicates":6,"../state/targetState":43,"./urlMatcher":54,"./urlRule":57}],57:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7429,7 +7429,7 @@ var BaseUrlRule = (function () {
     return BaseUrlRule;
 }());
 exports.BaseUrlRule = BaseUrlRule;
-//# sourceMappingURL=urlRule.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/predicates":6,"./urlMatcher":54}],58:[function(require,module,exports){
 "use strict";
 /**
@@ -7510,7 +7510,7 @@ UrlService.locationServiceStub = makeStub(locationServicesFns);
 /** @hidden */
 UrlService.locationConfigStub = makeStub(locationConfigFns);
 exports.UrlService = UrlService;
-//# sourceMappingURL=urlService.js.map
+
 },{"../common/common":1,"../common/coreservices":2}],59:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -7523,7 +7523,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 /** */
 __export(require("./vanilla/index"));
-//# sourceMappingURL=vanilla.js.map
+
 },{"./vanilla/index":63}],60:[function(require,module,exports){
 "use strict";
 /**
@@ -7569,7 +7569,7 @@ var BaseLocationServices = (function () {
     return BaseLocationServices;
 }());
 exports.BaseLocationServices = BaseLocationServices;
-//# sourceMappingURL=baseLocationService.js.map
+
 },{"../common/common":1,"../common/predicates":6,"./utils":70}],61:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7617,7 +7617,7 @@ var BrowserLocationConfig = (function () {
     return BrowserLocationConfig;
 }());
 exports.BrowserLocationConfig = BrowserLocationConfig;
-//# sourceMappingURL=browserLocationConfig.js.map
+
 },{"../common/predicates":6}],62:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -7659,7 +7659,7 @@ var HashLocationService = (function (_super) {
     return HashLocationService;
 }(baseLocationService_1.BaseLocationServices));
 exports.HashLocationService = HashLocationService;
-//# sourceMappingURL=hashLocationService.js.map
+
 },{"./baseLocationService":60,"./utils":70}],63:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -7676,7 +7676,7 @@ __export(require("./memoryLocationConfig"));
 __export(require("./browserLocationConfig"));
 __export(require("./utils"));
 __export(require("./plugins"));
-//# sourceMappingURL=index.js.map
+
 },{"./baseLocationService":60,"./browserLocationConfig":61,"./hashLocationService":62,"./injector":64,"./memoryLocationConfig":65,"./memoryLocationService":66,"./plugins":67,"./pushStateLocationService":68,"./q":69,"./utils":70}],64:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7777,7 +7777,7 @@ exports.$injector = {
         return result || [];
     }
 };
-//# sourceMappingURL=injector.js.map
+
 },{"../common/index":5}],65:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7803,7 +7803,7 @@ var MemoryLocationConfig = (function () {
     return MemoryLocationConfig;
 }());
 exports.MemoryLocationConfig = MemoryLocationConfig;
-//# sourceMappingURL=memoryLocationConfig.js.map
+
 },{"../common/common":1,"../common/predicates":6}],66:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -7838,7 +7838,7 @@ var MemoryLocationService = (function (_super) {
     return MemoryLocationService;
 }(baseLocationService_1.BaseLocationServices));
 exports.MemoryLocationService = MemoryLocationService;
-//# sourceMappingURL=memoryLocationService.js.map
+
 },{"./baseLocationService":60}],67:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7868,7 +7868,7 @@ exports.hashLocationPlugin = utils_1.locationPluginFactory('vanilla.hashBangLoca
 exports.pushStateLocationPlugin = utils_1.locationPluginFactory("vanilla.pushStateLocation", true, pushStateLocationService_1.PushStateLocationService, browserLocationConfig_1.BrowserLocationConfig);
 /** A `UIRouterPlugin` that gets/sets the current location from an in-memory object */
 exports.memoryLocationPlugin = utils_1.locationPluginFactory("vanilla.memoryLocation", false, memoryLocationService_1.MemoryLocationService, memoryLocationConfig_1.MemoryLocationConfig);
-//# sourceMappingURL=plugins.js.map
+
 },{"../common/coreservices":2,"./browserLocationConfig":61,"./hashLocationService":62,"./injector":64,"./memoryLocationConfig":65,"./memoryLocationService":66,"./pushStateLocationService":68,"./q":69,"./utils":70}],68:[function(require,module,exports){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -7921,7 +7921,7 @@ var PushStateLocationService = (function (_super) {
     return PushStateLocationService;
 }(baseLocationService_1.BaseLocationServices));
 exports.PushStateLocationService = PushStateLocationService;
-//# sourceMappingURL=pushStateLocationService.js.map
+
 },{"./baseLocationService":60,"./utils":70}],69:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -7977,7 +7977,7 @@ exports.$q = {
         }
     }
 };
-//# sourceMappingURL=q.js.map
+
 },{"../common/index":5}],70:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -8046,7 +8046,7 @@ function locationPluginFactory(name, isHtml5, serviceClass, configurationClass) 
     };
 }
 exports.locationPluginFactory = locationPluginFactory;
-//# sourceMappingURL=utils.js.map
+
 },{"../common/common":1,"../common/index":5}],71:[function(require,module,exports){
 "use strict";
 function __export(m) {
@@ -8054,7 +8054,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./view"));
-//# sourceMappingURL=index.js.map
+
 },{"./view":72}],72:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -8338,7 +8338,7 @@ ViewService.matches = function (uiViewsByFqn, uiView) { return function (viewCon
     return vc.$uiViewContextAnchor === (uiViewContext && uiViewContext.name);
 }; };
 exports.ViewService = ViewService;
-//# sourceMappingURL=view.js.map
+
 },{"../common/common":1,"../common/hof":4,"../common/predicates":6,"../common/trace":9}],73:[function(require,module,exports){
 /**
  * @license AngularJS v1.6.4
@@ -12843,7 +12843,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ng_from_import = require("angular");
 var ng_from_global = angular;
 exports.ng = (ng_from_import && ng_from_import.module) ? ng_from_import : ng_from_global;
-//# sourceMappingURL=angular.js.map
+
 },{"angular":92}],78:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -13415,7 +13415,7 @@ angular_1.ng.module('ui.router.state')
     .directive('uiSrefActive', uiSrefActive)
     .directive('uiSrefActiveEq', uiSrefActive)
     .directive('uiState', uiState);
-//# sourceMappingURL=stateDirectives.js.map
+
 },{"../angular":77,"@uirouter/core":21}],79:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -13706,7 +13706,7 @@ function registerControllerCallbacks($q, $transitions, controllerInstance, $scop
 }
 angular_1.ng.module('ui.router.state').directive('uiView', exports.uiView);
 angular_1.ng.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
-//# sourceMappingURL=viewDirective.js.map
+
 },{"../angular":77,"../services":83,"../statebuilders/views":87,"@uirouter/core":21,"angular":92}],80:[function(require,module,exports){
 "use strict";
 /**
@@ -13730,7 +13730,7 @@ require("./stateFilters");
 require("./directives/viewDirective");
 require("./viewScroll");
 exports.default = "ui.router";
-//# sourceMappingURL=index.js.map
+
 },{"./directives/stateDirectives":78,"./directives/viewDirective":79,"./injectables":81,"./services":83,"./stateFilters":84,"./stateProvider":85,"./statebuilders/views":87,"./urlRouterProvider":89,"./viewScroll":90,"@uirouter/core":21}],81:[function(require,module,exports){
 "use strict";
 /**
@@ -14099,7 +14099,7 @@ var $urlMatcherFactory;
  * @deprecated
  */
 var $urlMatcherFactoryProvider;
-//# sourceMappingURL=injectables.js.map
+
 },{}],82:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -14175,7 +14175,7 @@ var Ng1LocationServices = (function () {
     return Ng1LocationServices;
 }());
 exports.Ng1LocationServices = Ng1LocationServices;
-//# sourceMappingURL=locationServices.js.map
+
 },{"@uirouter/core":21}],83:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -14292,7 +14292,7 @@ exports.getLocals = function (ctx) {
     });
     return tuples.reduce(core_1.applyPairs, {});
 };
-//# sourceMappingURL=services.js.map
+
 },{"./angular":77,"./locationServices":82,"./stateProvider":85,"./statebuilders/onEnterExitRetain":86,"./statebuilders/views":87,"./templateFactory":88,"./urlRouterProvider":89,"@uirouter/core":21}],84:[function(require,module,exports){
 "use strict";
 /** @module ng1 */ /** for typedoc */
@@ -14339,7 +14339,7 @@ exports.$IncludedByStateFilter = $IncludedByStateFilter;
 angular_1.ng.module('ui.router.state')
     .filter('isState', $IsStateFilter)
     .filter('includedByState', $IncludedByStateFilter);
-//# sourceMappingURL=stateFilters.js.map
+
 },{"./angular":77}],85:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -14480,7 +14480,7 @@ var StateProvider = (function () {
     return StateProvider;
 }());
 exports.StateProvider = StateProvider;
-//# sourceMappingURL=stateProvider.js.map
+
 },{"@uirouter/core":21}],86:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -14506,7 +14506,7 @@ exports.getStateHookBuilder = function (hookName) {
         return hook ? decoratedNg1Hook : undefined;
     };
 };
-//# sourceMappingURL=onEnterExitRetain.js.map
+
 },{"../services":83,"@uirouter/core":21}],87:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -14616,7 +14616,7 @@ var Ng1ViewConfig = (function () {
     return Ng1ViewConfig;
 }());
 exports.Ng1ViewConfig = Ng1ViewConfig;
-//# sourceMappingURL=views.js.map
+
 },{"@uirouter/core":21}],88:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -14811,7 +14811,7 @@ var scopeBindings = function (bindingsObj) { return Object.keys(bindingsObj || {
     .map(function (key) { return [key, /^([=<@&])[?]?(.*)/.exec(bindingsObj[key])]; })
     .filter(function (tuple) { return core_1.isDefined(tuple) && core_1.isArray(tuple[1]); })
     .map(function (tuple) { return ({ name: tuple[1][2] || tuple[0], type: tuple[1][1] }); }); };
-//# sourceMappingURL=templateFactory.js.map
+
 },{"./angular":77,"@uirouter/core":21}],89:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -15018,7 +15018,7 @@ var UrlRouterProvider = (function () {
     return UrlRouterProvider;
 }());
 exports.UrlRouterProvider = UrlRouterProvider;
-//# sourceMappingURL=urlRouterProvider.js.map
+
 },{"@uirouter/core":21}],90:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -15042,7 +15042,7 @@ function $ViewScrollProvider() {
         }];
 }
 angular_1.ng.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProvider);
-//# sourceMappingURL=viewScroll.js.map
+
 },{"./angular":77}],91:[function(require,module,exports){
 /**
  * @license AngularJS v1.6.4
@@ -48421,8 +48421,48 @@ require('./angular');
 module.exports = angular;
 
 },{"./angular":91}],93:[function(require,module,exports){
+require('angular');
+require('angular-ui-router');
+require('angular-cookies');
+require('angular-animate');
+
+var carouselComponent = require('./carousel/carousel.component.js');
+var tabsComponent = require('./tabs/tabs.component.js');
+var newsComponent = require('./news/news.component.js');
+var internalnewsComponent = require('./news/internal/internalnews.component.js');
+var carouselService = require('./carousel/carousel.service.js');
+var newsService = require('./news/news.service.js');
+var carouselFactory = require('./carousel/carousel.factory.js');
+var newsFactory = require('./news/news.factory.js');
+
+angular.module('testFrontPL', ['ui.router', 'ngCookies', 'ngAnimate'])
+.service('carouselService', carouselService)
+.service('newsService', newsService)
+.factory('carouselFactory', carouselFactory)
+.factory('newsFactory', newsFactory)
+.component('carouselView', carouselComponent)
+.component('tabsView', tabsComponent)
+.component('newsView', newsComponent)
+.component('internalNews', internalnewsComponent)
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+  .state('home', {
+    url: '/',
+    component: 'newsView'
+  })
+  .state('home.new', {
+    url: 'news/:id',
+    component: 'internalNews'
+  })
+    // Utilizando o HTML5 History API
+    $locationProvider.html5Mode(true);
+})
+},{"./carousel/carousel.component.js":94,"./carousel/carousel.factory.js":95,"./carousel/carousel.service.js":96,"./news/internal/internalnews.component.js":97,"./news/news.component.js":98,"./news/news.factory.js":99,"./news/news.service.js":100,"./tabs/tabs.component.js":101,"angular":92,"angular-animate":74,"angular-cookies":76,"angular-ui-router":80}],94:[function(require,module,exports){
 var carousel = {
-	templateUrl: '../app/carousel/carousel.html',
+	templateUrl: '../../src/app/carousel/carousel.html',
 	controller: function(carouselFactory, $interval){
 
 		var vm = this;
@@ -48446,7 +48486,7 @@ var carousel = {
 }
 
 module.exports = carousel;
-},{}],94:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 module.exports = function(carouselService){
 
 	var carousel = {};
@@ -48497,7 +48537,7 @@ module.exports = function(carouselService){
 	return carousel;
 
 }
-},{}],95:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 module.exports = function(){	
   var carousel = {
     name: 'Carousel Home',
@@ -48544,49 +48584,9 @@ module.exports = function(){
     return carousel;
   }
 }
-},{}],96:[function(require,module,exports){
-require('angular');
-require('angular-ui-router');
-require('angular-cookies');
-require('angular-animate');
-
-var carouselComponent = require('./carousel/carousel.component.js');
-var tabsComponent = require('./tabs/tabs.component.js');
-var newsComponent = require('./news/news.component.js');
-var internalnewsComponent = require('./news/internal/internalnews.component.js');
-var carouselService = require('./carousel/carousel.service.js');
-var newsService = require('./news/news.service.js');
-var carouselFactory = require('./carousel/carousel.factory.js');
-var newsFactory = require('./news/news.factory.js');
-
-angular.module('testFrontPL', ['ui.router', 'ngCookies', 'ngAnimate'])
-.service('carouselService', carouselService)
-.service('newsService', newsService)
-.factory('carouselFactory', carouselFactory)
-.factory('newsFactory', newsFactory)
-.component('carouselView', carouselComponent)
-.component('tabsView', tabsComponent)
-.component('newsView', newsComponent)
-.component('internalNews', internalnewsComponent)
-.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-
-  $urlRouterProvider.otherwise('/');
-
-  $stateProvider
-  .state('home', {
-    url: '/',
-    component: 'newsView'
-  })
-  .state('home.new', {
-    url: 'news/:id',
-    component: 'internalNews'
-  })
-    // Utilizando o HTML5 History API
-    $locationProvider.html5Mode(true);
-})
-},{"./carousel/carousel.component.js":93,"./carousel/carousel.factory.js":94,"./carousel/carousel.service.js":95,"./news/internal/internalnews.component.js":97,"./news/news.component.js":98,"./news/news.factory.js":99,"./news/news.service.js":100,"./tabs/tabs.component.js":101,"angular":92,"angular-animate":74,"angular-cookies":76,"angular-ui-router":80}],97:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 var products = {
-	templateUrl: '../app/news/internal/internalnews.html',
+	templateUrl: '../../src/app/news/internal/internalnews.html',
 	controller: function($scope, $state, $stateParams, newsFactory){
      var vm = this;
 
@@ -48616,7 +48616,7 @@ var products = {
 module.exports = products;
 },{}],98:[function(require,module,exports){
 var carousel = {
-	templateUrl: '../app/news/news.html',
+	templateUrl: '../../src/app/news/news.html',
 	controller: function(newsFactory, $http){
 
 		var vm = this;
@@ -48676,7 +48676,7 @@ module.exports = function(){
 }
 },{}],101:[function(require,module,exports){
 var carousel = {
-	templateUrl: '../app/tabs/tabs.html',
+	templateUrl: '../../src/app/tabs/tabs.html',
 	controller: function(){
 		var vm = this;
 
@@ -48685,4 +48685,4 @@ var carousel = {
 }
 
 module.exports = carousel;
-},{}]},{},[96])
+},{}]},{},[93]);

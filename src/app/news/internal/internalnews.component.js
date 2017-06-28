@@ -1,5 +1,5 @@
 var products = {
-	templateUrl: '../app/news/internal/internalnews.html',
+	templateUrl: '../../src/app/news/internal/internalnews.html',
 	controller: function($scope, $state, $stateParams, newsFactory){
      var vm = this;
 

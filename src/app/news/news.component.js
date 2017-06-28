@@ -1,5 +1,5 @@
 var carousel = {
-	templateUrl: '../app/news/news.html',
+	templateUrl: '../../src/app/news/news.html',
 	controller: function(newsFactory, $http){
 
 		var vm = this;

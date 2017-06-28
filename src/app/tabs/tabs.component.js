@@ -1,5 +1,5 @@
 var carousel = {
-	templateUrl: '../app/tabs/tabs.html',
+	templateUrl: '../../src/app/tabs/tabs.html',
 	controller: function(){
 		var vm = this;
 

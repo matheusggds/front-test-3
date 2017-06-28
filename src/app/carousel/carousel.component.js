@@ -1,5 +1,5 @@
 var carousel = {
-	templateUrl: '../app/carousel/carousel.html',
+	templateUrl: '../../src/app/carousel/carousel.html',
 	controller: function(carouselFactory, $interval){
 
 		var vm = this;
