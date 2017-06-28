@@ -1,5 +1,5 @@
 var products = {
-	templateUrl: '../../src/app/news/internal/internalnews.html',
+	templateUrl: '../app/news/internal/internalnews.html',
 	controller: function($scope, $state, $stateParams, newsFactory){
      var vm = this;
 
@@ -24,6 +24,6 @@ var products = {
         //     $scope.$emit('products-updated');
         // }
     }
-}
+};
 
 module.exports = products;

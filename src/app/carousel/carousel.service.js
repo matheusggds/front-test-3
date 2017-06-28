@@ -8,7 +8,7 @@ module.exports = function(){
     ],
     paused: true,
     interval: 3500
-  }
+  };
 
   this.getCarousel = function() {
     return carousel;
@@ -16,15 +16,15 @@ module.exports = function(){
 
   this.getItems = function(){
     return carousel.items;
-  }
+  };
 
    this.getInterval = function(){
     return carousel.interval;
-  }
+  };
 
    this.setInterval = function(interval){
     return carousel.interval;
-  }
+  };
 
   this.removeActive = function(){
     var indexActive = carousel.items.findIndex(function(el){
@@ -32,7 +32,7 @@ module.exports = function(){
     });
     carousel.items[indexActive].active = false;
     return carousel;
-  }
+  };
 
   this.setActive = function(id_item){
     var indexItem = carousel.items.findIndex(function(el){
@@ -42,5 +42,5 @@ module.exports = function(){
     carousel.items[indexItem].active = true;
 
     return carousel;
-  }
-}
+  };
+};

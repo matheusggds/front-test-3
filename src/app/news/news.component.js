@@ -1,5 +1,5 @@
 var carousel = {
-	templateUrl: '../../src/app/news/news.html',
+	templateUrl: '../app/news/news.html',
 	controller: function(newsFactory, $http){
 
 		var vm = this;
@@ -15,6 +15,6 @@ var carousel = {
     		}); 
 		}
 	}
-}
+};
 
 module.exports = carousel;

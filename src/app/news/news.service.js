@@ -7,5 +7,5 @@ module.exports = function(){
 
   this.setList = function(list){
     newslist = list;
-  }
-}
+  };
+};

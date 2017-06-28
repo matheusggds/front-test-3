@@ -33,7 +33,7 @@ angular.module('testFrontPL', ['ui.router', 'ngCookies', 'ngAnimate'])
   .state('home.new', {
     url: 'news/:id',
     component: 'internalNews'
-  })
+  });
     // Utilizando o HTML5 History API
     $locationProvider.html5Mode(true);
-})
+});

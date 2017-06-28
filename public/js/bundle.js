@@ -48456,13 +48456,13 @@ angular.module('testFrontPL', ['ui.router', 'ngCookies', 'ngAnimate'])
   .state('home.new', {
     url: 'news/:id',
     component: 'internalNews'
-  })
+  });
     // Utilizando o HTML5 History API
     $locationProvider.html5Mode(true);
-})
+});
 },{"./carousel/carousel.component.js":94,"./carousel/carousel.factory.js":95,"./carousel/carousel.service.js":96,"./news/internal/internalnews.component.js":97,"./news/news.component.js":98,"./news/news.factory.js":99,"./news/news.service.js":100,"./tabs/tabs.component.js":101,"angular":92,"angular-animate":74,"angular-cookies":76,"angular-ui-router":80}],94:[function(require,module,exports){
 var carousel = {
-	templateUrl: '../../src/app/carousel/carousel.html',
+	templateUrl: '../app/carousel/carousel.html',
 	controller: function(carouselFactory, $interval){
 
 		var vm = this;
@@ -48483,7 +48483,7 @@ var carousel = {
 			carouselFactory.setSlideActive(id_item);
 		}
 	}
-}
+};
 
 module.exports = carousel;
 },{}],95:[function(require,module,exports){
@@ -48519,7 +48519,7 @@ module.exports = function(carouselService){
 		var indexActive = items.filter(function(el, pos){
 			if(el.active == true)
 				index = pos;
-			return el.active == true
+			return el.active == true;
 		});
 
 		items[index].active = false;
@@ -48536,7 +48536,7 @@ module.exports = function(carouselService){
 
 	return carousel;
 
-}
+};
 },{}],96:[function(require,module,exports){
 module.exports = function(){	
   var carousel = {
@@ -48548,7 +48548,7 @@ module.exports = function(){
     ],
     paused: true,
     interval: 3500
-  }
+  };
 
   this.getCarousel = function() {
     return carousel;
@@ -48556,15 +48556,15 @@ module.exports = function(){
 
   this.getItems = function(){
     return carousel.items;
-  }
+  };
 
    this.getInterval = function(){
     return carousel.interval;
-  }
+  };
 
    this.setInterval = function(interval){
     return carousel.interval;
-  }
+  };
 
   this.removeActive = function(){
     var indexActive = carousel.items.findIndex(function(el){
@@ -48572,7 +48572,7 @@ module.exports = function(){
     });
     carousel.items[indexActive].active = false;
     return carousel;
-  }
+  };
 
   this.setActive = function(id_item){
     var indexItem = carousel.items.findIndex(function(el){
@@ -48582,11 +48582,11 @@ module.exports = function(){
     carousel.items[indexItem].active = true;
 
     return carousel;
-  }
-}
+  };
+};
 },{}],97:[function(require,module,exports){
 var products = {
-	templateUrl: '../../src/app/news/internal/internalnews.html',
+	templateUrl: '../app/news/internal/internalnews.html',
 	controller: function($scope, $state, $stateParams, newsFactory){
      var vm = this;
 
@@ -48611,12 +48611,12 @@ var products = {
         //     $scope.$emit('products-updated');
         // }
     }
-}
+};
 
 module.exports = products;
 },{}],98:[function(require,module,exports){
 var carousel = {
-	templateUrl: '../../src/app/news/news.html',
+	templateUrl: '../app/news/news.html',
 	controller: function(newsFactory, $http){
 
 		var vm = this;
@@ -48632,7 +48632,7 @@ var carousel = {
     		}); 
 		}
 	}
-}
+};
 
 module.exports = carousel;
 },{}],99:[function(require,module,exports){
@@ -48661,7 +48661,7 @@ module.exports = function(newsService){
 	}
 
 	return news;
-}
+};
 },{}],100:[function(require,module,exports){
 module.exports = function(){	
   var newslist = [];
@@ -48672,17 +48672,17 @@ module.exports = function(){
 
   this.setList = function(list){
     newslist = list;
-  }
-}
+  };
+};
 },{}],101:[function(require,module,exports){
 var carousel = {
-	templateUrl: '../../src/app/tabs/tabs.html',
+	templateUrl: '../app/tabs/tabs.html',
 	controller: function(){
 		var vm = this;
 
 		vm.tab = 1;
 	}
-}
+};
 
 module.exports = carousel;
 },{}]},{},[93]);

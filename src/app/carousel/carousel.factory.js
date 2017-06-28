@@ -30,7 +30,7 @@ module.exports = function(carouselService){
 		var indexActive = items.filter(function(el, pos){
 			if(el.active == true)
 				index = pos;
-			return el.active == true
+			return el.active == true;
 		});
 
 		items[index].active = false;
@@ -47,4 +47,4 @@ module.exports = function(carouselService){
 
 	return carousel;
 
-}
+};

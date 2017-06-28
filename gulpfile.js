@@ -17,7 +17,7 @@ gulp.task('lint', function() {
 
 //Concatenar outros .js
 gulp.task('scripts', function(){
-  return gulp.src(['src/assets/**/*.js',configFile])
+  return gulp.src('src/assets/**/*.js')
   .pipe(uglify())
   .pipe(concat('vendor.min.js'))
   .pipe(gulp.dest('public/'));
@@ -51,6 +51,12 @@ gulp.task('browserify', function() {
             browserSync.reload;
           })
 
+gulp.task('copy', ['browserify','sass'], function() {
+    gulp.src(['./src/**/*.html','./src/**/*.css'])
+        .pipe(gulp.dest('./public'))
+    .pipe(browserSync.stream())
+});
+
 // Compila os arquivos .scss em src/assets/sass -> public/css/ e roda o BrowserSync
 gulp.task('sass', function () {
   return gulp.src('src/assets/sass/**/*.scss')
@@ -60,9 +66,9 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('build',['lint', 'sass', 'browserify', 'scripts']);
+gulp.task('build',['lint', 'copy', 'sass', 'browserify', 'scripts']);
 
-gulp.task('default', ['browser-sync'], function(){
+gulp.task('default', ['build', 'browserify', 'browser-sync'], function(){
   gulp.watch("./src/app/**/*.js", ["build"]);
   gulp.watch("./public/**/*.html").on('change', browserSync.reload);
 })

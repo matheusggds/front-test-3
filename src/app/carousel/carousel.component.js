@@ -1,5 +1,5 @@
 var carousel = {
-	templateUrl: '../../src/app/carousel/carousel.html',
+	templateUrl: '../app/carousel/carousel.html',
 	controller: function(carouselFactory, $interval){
 
 		var vm = this;
@@ -20,6 +20,6 @@ var carousel = {
 			carouselFactory.setSlideActive(id_item);
 		}
 	}
-}
+};
 
 module.exports = carousel;

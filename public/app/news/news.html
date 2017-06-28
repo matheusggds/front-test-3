@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-md-4 mx-auto">
+		<select name="show-filter" class="form-control mb-3" ng-model="categoryFilter">
+		<option value selected="selected">Categoria</option>
+		<option value="comida">Comidas</option>
+		<option value="animais">Animais</option>
+		<option value="esportes">Esportes</option>
+		<option value="cidade">Cidades</option>
+	</select>
+</div>
+</div>
+
+<div class="row">
+	<div class="col-xl-3 col-lg-4 col-sm-6 mb-3" ng-repeat="item in $ctrl.list | filter: {category: categoryFilter}">
+		<div class="card">
+			<img class="card-img-top" src="{{item.image_thumb}}" alt="Card image cap">
+			<div class="card-block">
+				<h5 class="card-title text-center">{{item.category | uppercase}}</h5>
+				<p class="card-text">{{item.txt_resume}}</p>
+				<a ui-sref="home.new({ id: item.id })" class="btn btn-primary">{{item.txt_button}}</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div ui-view class="view-side-form"></div>
